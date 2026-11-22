@@ -1,16 +1,15 @@
-// A working best-game-01 entry (Node 22, standard library only): the game is this directory's
-// game/ folder, plain static files a desktop browser loads offline (game/index.html and its ES
-// modules, no library and no network request), and the program hands it in. It copies game/ and
-// screenshots/ from beside this file to /output and writes /output/dossier.json, the summary the
-// judge reads, with the vendored make.fun library. A starting point, not a winner: Block Dodger, a
-// plain 2D canvas game where a paddle dodges falling blocks and catches coins, with a title screen,
-// score, lives and levels, game over and restart, flat colours and no sound. Build your own game
-// (any genre, any library you vendor under game/, or none), put your 3 or 4 PNG or JPEG screenshots
-// in screenshots/ (the first by name is the cover) and run it.
-//
-// Serve it locally with `node serve.ts`, then open http://localhost:8080.
-// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+// Gilded Vault Heist — entry for make.fun best-heist-game-20261122-0559.
+// A top-down heist game: sneak through a vault hall, slip past guard vision
+// cones and sweeping security cameras, grab the loot, keep the alarm meter
+// down, and reach the exit. The playable game is the plain static files in
+// game/ (index.html plus its ES modules, no libraries, nothing fetched over
+// the network), and screenshots/ holds three PNG stills, the first of which
+// is the cover. This program packages the entry: it copies game/ and
+// screenshots/ beside this file into the output directory and writes
+// dossier.json for the judge, using the vendored make.fun helper.
+// To play it locally, run `node serve.ts` and open http://localhost:8080.
+// Outside the grader's container, MAKEFUN_OUTPUT_DIR picks the output dir:
+//   MAKEFUN_OUTPUT_DIR=out node main.ts
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
